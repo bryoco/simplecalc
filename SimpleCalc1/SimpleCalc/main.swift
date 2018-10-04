@@ -14,28 +14,35 @@ public class Calculator {
         // Edge check
         if args.count < 2 { return 0 }
         
-        switch args.last {
-        case "count":
-            return args.count - 1
-        case "avg":
+        // Ordinary operations
+        if args.last!.count == 1 {
             
-            var sum = 0
-            for i in 0...args.count - 2 {
-                sum += Int(args[i])!
-            }
-            return sum / (args.count - 1)
+            let op = args[1]
             
-        case "fact":
-            return factorial(n: Int(args[0])!)
-            
-        // regular operations ["1", "+", "1"]
-        default:
-            switch args[1] {
+            switch op {
             case "+": return Int(args[0])! + Int(args[2])!
             case "-": return Int(args[0])! - Int(args[2])!
             case "*": return Int(args[0])! * Int(args[2])!
             case "/": return Int(args[0])! / Int(args[2])!
             default:  return Int(args[0])! % Int(args[2])!
+            }
+        
+        } else {
+            
+            let op = args.last!
+            
+            switch op {
+            case "count": return args.count - 1
+            case "fact":
+                return factorial(n: Int(args[0])!)
+            // avg
+            default:
+                var sum = 0
+                for i in 0...args.count - 2 {
+                    sum += Int(args[i])!
+                }
+                
+                return sum / args.count - 2
             }
         }
     }
@@ -45,6 +52,7 @@ public class Calculator {
     }
     
     func factorial(n: Int) -> Int {
+        
         if n == 0 {
             return 1
         } else {
@@ -53,24 +61,10 @@ public class Calculator {
     }
 }
 
-var args: [String] = []
+print("UW Calculator v1")
+print("Enter an expression separated by returns:")
+let first = readLine()!
+let operation = readLine()!
+let second = readLine()!
+print(Calculator().calculate([first, operation, second]))
 
-for i in 0...CommandLine.arguments.count - 2 {
-    args.append(CommandLine.arguments[i + 1])
-}
-
-print("args: \(args)")
-print("args.count: \(args.count)")
-
-if args.count != 0 {
-    print(Calculator().calculate(args))
-} else {
-    
-    print("UW Calculator v1")
-    print("Enter an expression separated by returns:")
-    let first = readLine()!
-    let operation = readLine()!
-    let second = readLine()!
-    print(Calculator().calculate([first, operation, second]))
-    
-}

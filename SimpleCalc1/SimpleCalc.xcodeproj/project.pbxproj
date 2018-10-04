@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F6C7D0A1F84A9CD00D7E1F5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C7D091F84A9CD00D7E1F5 /* main.swift */; };
-		9F6C7D171F84A9E700D7E1F5 /* SimpleCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C7D161F84A9E700D7E1F5 /* SimpleCalcTests.swift */; };
 		9F6C7D1C1F84ADEC00D7E1F5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C7D091F84A9CD00D7E1F5 /* main.swift */; };
+		A43BA05D2165DD4000086D92 /* SimpleCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BA05C2165DD4000086D92 /* SimpleCalcTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,8 +28,8 @@
 		9F6C7D061F84A9CD00D7E1F5 /* SimpleCalc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SimpleCalc; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6C7D091F84A9CD00D7E1F5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9F6C7D141F84A9E700D7E1F5 /* SimpleCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F6C7D161F84A9E700D7E1F5 /* SimpleCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalcTests.swift; sourceTree = "<group>"; };
 		9F6C7D181F84A9E700D7E1F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A43BA05C2165DD4000086D92 /* SimpleCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalcTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +79,8 @@
 		9F6C7D151F84A9E700D7E1F5 /* SimpleCalcTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F6C7D161F84A9E700D7E1F5 /* SimpleCalcTests.swift */,
 				9F6C7D181F84A9E700D7E1F5 /* Info.plist */,
+				A43BA05C2165DD4000086D92 /* SimpleCalcTests.swift */,
 			);
 			path = SimpleCalcTests;
 			sourceTree = "<group>";
@@ -185,7 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F6C7D1C1F84ADEC00D7E1F5 /* main.swift in Sources */,
-				9F6C7D171F84A9E700D7E1F5 /* SimpleCalcTests.swift in Sources */,
+				A43BA05D2165DD4000086D92 /* SimpleCalcTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,9 +305,12 @@
 		9F6C7D0E1F84A9CD00D7E1F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HJSMX5PY5;
+				INFOPLIST_FILE = "$(SRCROOT)/SimpleCalcTests/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -315,9 +318,12 @@
 		9F6C7D0F1F84A9CD00D7E1F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HJSMX5PY5;
+				INFOPLIST_FILE = "$(SRCROOT)/SimpleCalcTests/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
