@@ -55,14 +55,12 @@ public class Calculator {
 
 var args: [String] = []
 
-for i in 0...CommandLine.arguments.count - 2 {
-    args.append(CommandLine.arguments[i + 1])
-}
 
-print("args: \(args)")
-print("args.count: \(args.count)")
-
-if args.count != 0 {
+if CommandLine.arguments.count > 1 {
+    for i in 0...CommandLine.arguments.count - 2 {
+        args.append(CommandLine.arguments[i + 1])
+    }
+    
     print(Calculator().calculate(args))
 } else {
     
