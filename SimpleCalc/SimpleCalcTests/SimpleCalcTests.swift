@@ -26,6 +26,9 @@ class SimpleCalcTests: XCTestCase {
         XCTAssert(calc.calculate(["2", "*", "2"]) == 4)
         XCTAssert(calc.calculate(["2", "/", "2"]) == 1)
         XCTAssert(calc.calculate(["2", "%", "2"]) == 0)
+        
+        // negs
+        XCTAssert(calc.calculate(["2", "+", "-2"]) == 0)
     }
     
     func testCountOps() {
@@ -38,7 +41,13 @@ class SimpleCalcTests: XCTestCase {
         XCTAssert(calc.calculate(["1", "2", "3", "4", "5", "avg"]) == 3) // 15 / 5 = 3
         XCTAssert(calc.calculate(["2", "2", "4", "4", "avg"]) == 3) // 12 / 4 = 3
         XCTAssert(calc.calculate(["2", "avg"]) == 2) // 2 / 1 = 2
+        XCTAssert(calc.calculate(["1", "2", "3", "4", "5", "avg"]) == 3) // 15 / 5 = 3
         XCTAssert(calc.calculate(["avg"]) == 0) // 0 / 0 = 0 (not really, but it's an edge case
+        
+        // negs
+        XCTAssert(calc.calculate(["-2", "avg"]) == -2) // -2 / 1 = -2
+        XCTAssert(calc.calculate(["-100", "0", "avg"]) == -50) // -100 / 2 = -50
+        XCTAssert(calc.calculate(["-1", "-2", "-3", "-4", "-5", "avg"]) == -3) // -15 / 5 = -3
     }
     
     func testFactOps() {
